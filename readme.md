@@ -6,6 +6,10 @@
 * Emotion v10
 * Typescript v3.8.3
 
+## Other Project Setup
+* **[[Nextjs_Ts_Eslint]](https://github.com/Project-Setup/Nextjs_Ts_Eslint)** NextJs, EmotionJs, Typescript
+* **[[github_pwa]](https://github.com/Project-Setup/github_pwa)** Github page pwa setup with NextJs, code splitting Redux-Toolkit
+
 ## Usage of this example setup
 
 0. setup node env
