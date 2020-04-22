@@ -54,12 +54,10 @@
       "scripts": {
         "dev": "next",
         "build": "next build",
-        "start": "next start",
-        "export": "NODE_ENV=production npm run build && next export -o docs && touch docs/.nojekyll"
+        "start": "next start"
       }
     }
     ```
-    (the export script is for github pages)
 
 ### [Typescript](https://github.com/zeit/next.js#typescript)
 
@@ -342,27 +340,12 @@
     const prodAssetPrefix = '/{folder}';
     module.exports = () => ({
       env: {
-        ENV: process.env.NODE_ENV,
         LINK_PREFIX: isProd ? prodAssetPrefix : '';
       },
       assetPrefix: isProd ? prodAssetPrefix : '';,
     });
     ```
-2. change `as` prop in `next/Link` to add `linkPrefix`
-    ```tsx
-    import React from 'react';
-    import Link from 'next/link';
-
-    const linkPrefix = process.env.LINK_PREFIX;
-
-    const PrefixedLink: React.FC<Link['props']> = ({
-      href,
-      as = href,
-      ...props
-    }) => <Link href={href} as={`${linkPrefix}${as}`} {...props} />;
-
-    export default PrefixedLink;
-    ```
+2. change `as` prop in `next/Link` to add `linkPrefix`, similar to `src/features/link/Link.tsx` in the example setup
 3. change `scripts` in `package.json`
     ```json
     {
@@ -379,6 +362,18 @@
 1. 
     ```sh
     npm i -D @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining
+    ```
+2. add the plugins to `babel.config.js`
+    ```js
+    module.exports = {
+      presets: [
+        // ...
+      ],
+      plugins: [
+        '@babel/plugin-proposal-optional-chaining',
+        '@babel/plugin-proposal-nullish-coalescing-operator',
+      ],
+    };
     ```
 
 ### Dotenv
