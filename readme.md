@@ -1,8 +1,8 @@
 # Example Project Setup with NextJs, Redux-Toolkit, Typescript, Eslint, Jest and Emotion.
 
 ## Versions
-* NextJs v9.3.4
-* Redux-Toolkit v1.3.4
+* NextJs v9.3.6
+* Redux-Toolkit v1.3.5
 * Emotion v10
 * Typescript v3.8.3
 
