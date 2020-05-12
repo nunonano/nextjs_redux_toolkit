@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { css } from '@emotion/core';
+import { AppDispatch } from 'stores';
+import rem from 'utils/style/rem';
 import { incrementFirst, incrementSecond } from './countSlice';
-import { AppDispatch } from '../../stores';
 import { selectFirstCount, selectSecondCount } from './countSelectors';
-import rem from '../../utils/style/rem';
 
 const numDivStyles = css`
   display: flex;

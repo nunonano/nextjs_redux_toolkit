@@ -1,8 +1,8 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import CountDiv from '../../features/count/CountDiv';
-import Link from '../../features/link/Link';
+import CountDiv from 'features/count/CountDiv';
+import Link from 'features/link/Link';
 
 export interface Props {
   id?: string;

@@ -1,4 +1,4 @@
-import { RootState } from '../../stores';
+import { RootState } from 'stores';
 
 export const selectFirstCount = (state: RootState) => state.count[0];
 

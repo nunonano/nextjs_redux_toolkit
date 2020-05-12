@@ -107,7 +107,8 @@
         "skipLibCheck": true,
         "strict": true,
         "target": "esnext",
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "./src"
       },
       "exclude": [
         "node_modules",
@@ -128,7 +129,7 @@
 ### [Eslint and Prettier](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
 1. 
     ```sh
-    npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
+    npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-import-resolver-typescript
     npm i -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react-hooks
     npm i -D prettier eslint-config-prettier eslint-plugin-prettier
     ```
@@ -204,6 +205,7 @@
           node: {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
           },
+          typescript: {},
         },
         react:  {
           version:  'detect',  // Tells eslint-plugin-react to automatically detect the version of React to use

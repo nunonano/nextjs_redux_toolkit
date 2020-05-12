@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { MakeStoreArg } from '../utils/redux/withRedux';
-import rootReducer from '../reducers';
+import { MakeStoreArg } from 'utils/redux/withRedux';
+import rootReducer from 'reducers';
 
 export type RootState = ReturnType<typeof rootReducer>;
 
