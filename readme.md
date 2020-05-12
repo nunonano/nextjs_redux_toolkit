@@ -10,8 +10,8 @@
 * **Eslint** helps practice standard coding styles
 
 ## Versions
-* NextJs v9.3.6
-* Redux-Toolkit v1.3.5
+* NextJs v9.4.0
+* Redux-Toolkit v1.3.6
 * Emotion v10
 * Typescript v3.8.3
 
