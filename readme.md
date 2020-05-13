@@ -13,7 +13,7 @@
 * NextJs v9.4.0
 * Redux-Toolkit v1.3.6
 * Emotion v10
-* Typescript v3.8.3
+* Typescript v3.9.2
 
 ## Other Project Setup
 * **[[Nextjs_Ts_Eslint]](https://github.com/Project-Setup/Nextjs_Ts_Eslint)** NextJs, EmotionJs, Typescript
