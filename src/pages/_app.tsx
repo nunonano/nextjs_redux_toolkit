@@ -34,3 +34,7 @@ myApp.getInitialProps = async () => {
 };
 
 export default withRedux({ makeStore })(myApp);
+
+export const reportWebVitals = (metric: any) => {
+  console.log(metric);
+};
