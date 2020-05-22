@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import Page, { getStaticProps } from 'pages/index/[id]';
 import mountWithStore from '__tests__/common/mountWithStore';
