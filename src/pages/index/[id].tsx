@@ -11,15 +11,15 @@ export interface Props {
 const IndexPage: NextPage<Props> = ({ id, ...appProps }) => {
   const router = useRouter();
   return (
-    <div>
+    <main>
       <p>{`Param: ${router?.isFallback ? 'Hold on' : id}`}</p>
       <p>{`Props from _app.tsx: ${JSON.stringify(appProps)}`}</p>
-      <p>{`Page Process Env: ${process.env.TEST_PAGE_VAR}`}</p>
+      <p>{`Page Process Env: ${process.env.NEXT_PUBLIC_TEST_PAGE_VAR}`}</p>
       <CountDiv />
       <Link href="/">
         <a>index</a>
       </Link>
-    </div>
+    </main>
   );
 };
 
@@ -34,6 +34,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: [{ params: { id: '1' } }],
-  fallback: true,
+  fallback: false,
 });
 export default IndexPage;

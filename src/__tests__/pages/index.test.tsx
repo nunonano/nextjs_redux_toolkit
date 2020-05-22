@@ -1,13 +1,42 @@
-import React from 'react';
+import React, { ReactChild } from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-import IndexPage from '../../pages/index';
+import { Provider } from 'react-redux';
+import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
+import IndexPage from 'pages/index';
+import rootReducer from 'reducers';
+
+const mountWithStore = (children: ReactChild) => (
+  {
+    reducer = rootReducer,
+    devTools = false,
+    middleware,
+    preloadedState,
+    enhancers,
+  }: ConfigureStoreOptions = { reducer: rootReducer }
+) => {
+  const store = configureStore({
+    reducer,
+    devTools,
+    middleware,
+    preloadedState,
+    enhancers,
+  });
+  return mount(<Provider store={store}>{children}</Provider>);
+};
 
 describe('IndexPage', () => {
   const testProp = {
     test: 'test',
   };
-  /* eslint-disable-next-line react/jsx-props-no-spreading */
-  const TestIndexPageWrapper: ReactWrapper = mount(<IndexPage {...testProp} />);
+
+  let TestIndexPageWrapper: ReactWrapper;
+
+  beforeAll(async () => {
+    await act(async () => {
+      TestIndexPageWrapper = mountWithStore(<IndexPage {...testProp} />)();
+    });
+  });
 
   it('should render without throwing an error', () => {
     expect(TestIndexPageWrapper).toMatchSnapshot();
@@ -21,7 +50,7 @@ describe('IndexPage', () => {
 
   it('should render page process env correctly', () => {
     expect(TestIndexPageWrapper.find('p').at(1).text()).toContain(
-      process.env.TEST_PAGE_VAR
+      process.env.NEXT_PUBLIC_TEST_PAGE_VAR
     );
   });
 });

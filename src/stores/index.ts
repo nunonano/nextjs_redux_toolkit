@@ -7,7 +7,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 const makeStore = ({ preloadedState }: MakeStoreArg<RootState>) => {
   return configureStore({
     reducer: rootReducer,
-    devTools: process.env.ENV !== 'production',
+    devTools: process.env.NODE_ENV !== 'production',
     preloadedState,
   });
 };
