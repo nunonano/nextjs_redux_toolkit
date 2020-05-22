@@ -1,29 +1,8 @@
-import React, { ReactChild } from 'react';
-import { mount, ReactWrapper } from 'enzyme';
-import { Provider } from 'react-redux';
-import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
+import React from 'react';
+import { ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import IndexPage from 'pages/index';
-import rootReducer from 'reducers';
-
-const mountWithStore = (children: ReactChild) => (
-  {
-    reducer = rootReducer,
-    devTools = false,
-    middleware,
-    preloadedState,
-    enhancers,
-  }: ConfigureStoreOptions = { reducer: rootReducer }
-) => {
-  const store = configureStore({
-    reducer,
-    devTools,
-    middleware,
-    preloadedState,
-    enhancers,
-  });
-  return mount(<Provider store={store}>{children}</Provider>);
-};
+import mountWithStore from '__tests__/common/mountWithStore';
 
 describe('IndexPage', () => {
   const testProp = {
