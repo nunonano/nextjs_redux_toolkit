@@ -1,11 +1,10 @@
 module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|js?|tsx?|ts?)$',
-  testPathIgnorePatterns: ['(/__tests__/common/.*)'],
   globals: {
     NODE_ENV: 'test',
   },
-  snapshotSerializers: ['enzyme-to-json/serializer', 'jest-emotion'],
+  snapshotSerializers: ['@emotion/jest/serializer'],
   transform: {
     '^.+\\.(j|t)sx?$': 'babel-jest',
   },

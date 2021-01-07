@@ -3,14 +3,12 @@ module.exports = {
     [
       'next/babel',
       {
-        'preset-env': {},
-        'preset-react': {},
+        'preset-react': {
+          runtime: 'automatic',
+          importSource: '@emotion/react',
+        },
       },
     ],
-    '@emotion/babel-preset-css-prop',
   ],
-  plugins: [
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-  ],
+  plugins: ['@emotion/babel-plugin'],
 };
