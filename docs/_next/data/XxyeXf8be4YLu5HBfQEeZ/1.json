@@ -1,0 +1,1 @@
+{"initialProps":{"pageProps":{},"appProps":{"appInitialProcessEnv":"TEST_APP_PROP"}},"initialState":{"server":{"pathName":"/[id]","query":{"id":"1"}},"count":{"count":0}},"__N_SSG":true,"pageProps":{"id":"1","staticPageProcessEnv":"TEST_STATIC_PAGE_PROP"}}
