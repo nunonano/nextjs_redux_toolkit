@@ -2,6 +2,7 @@ const LINK_PREFIX = process.env.NEXT_PUBLIC_LINK_PREFIX || '';
 
 module.exports = () => ({
   target: 'serverless',
+  reactStrictMode: true,
   poweredByHeader: false,
-  assetPrefix: LINK_PREFIX,
+  basePath: LINK_PREFIX,
 });

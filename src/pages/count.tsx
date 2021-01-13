@@ -4,7 +4,7 @@ import { AppDispatch } from 'features/redux/store';
 import { css } from '@emotion/react';
 import { globalSelectCount } from 'features/count/countSelectors';
 import { plus, times } from 'features/count/countSlice';
-import Link from 'features/link/Link';
+import Link from 'next/link';
 import rem from 'utils/styles/rem';
 import transition from 'utils/styles/transition';
 

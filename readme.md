@@ -342,11 +342,10 @@
    ```js
    const LINK_PREFIX = process.env.NEXT_PUBLIC_LINK_PREFIX || '';
    module.exports = () => ({
-     assetPrefix: LINK_PREFIX,
+     basePath: LINK_PREFIX,
    });
    ```
-3. change `href` prop in `next/link` to add `linkPrefix`, similar to `src/features/link/Link.tsx` in the example setup
-4. change `scripts` in `package.json`
+3. change `scripts` in `package.json`
    ```json
    {
      "scripts": {
